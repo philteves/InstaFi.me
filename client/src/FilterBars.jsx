@@ -10,14 +10,36 @@ class FilterBars extends React.Component {
       a: props.filter[4],
     }
   }
-  onChange(event){
+
+  update(bar, value){
     //setState w/ new hsla, then
-    props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a);
+    //props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a);
   }
+
   render(){
     return(
-    <div>
-
+    <div id='filter-bars'>
+      <div className='bar-box'>
+        <div className='bar' onClick={this.update('h', 'insert value')}>
+          <div className='bar-position'></div>
+        </div>
+        <span className='bar-desc'>Hue</span>
+      </div><div className='bar-box'>
+        <div className='bar' onClick={this.update('s', 'insert value')}>
+          <div className='bar-position'></div>
+        </div>
+        <span className='bar-desc'>Saturation</span>
+      </div><div className='bar-box'>
+        <div className='bar' onClick={this.update('l', 'insert value')}>
+          <div className='bar-position'></div>
+        </div>
+        <span className='bar-desc'>Lightness</span>
+      </div><div className='bar-box'>
+        <div className='bar' onClick={this.update('a', 'insert value')}>
+          <div className='bar-position'></div>
+        </div>
+        <span className='bar-desc'>Opacity</span>
+      </div>
     </div>);
   }
 }
