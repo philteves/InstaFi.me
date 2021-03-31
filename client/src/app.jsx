@@ -17,7 +17,7 @@ class App extends React.Component {
       ['Ice Cold', 220, 100, 90, 20],
       ['Ice Cold', 220, 100, 90, 100, 100, 0],
       ['Plain Jane', 0, 100, 100, 100, 100, 0],
-      ['Red Hot', 320, 100, 95, 100, 100, 0]
+      ['Red Hot', 360, 400, 200, 100, 100, 0]
       ],
       currentFilter: ['Plain Jane', 0, 100, 100, 100, 100, 0]
     }

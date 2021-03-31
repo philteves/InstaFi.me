@@ -39,6 +39,7 @@ body {
 #main-img-container {
   height: 25%;
   width: 25%;
+  margin-left: 10vw;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +83,7 @@ body {
 }
 
 #filter-bars {
-  margin-left: 20px;
+  margin-left: 10vh;
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
