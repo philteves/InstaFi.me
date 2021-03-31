@@ -42,15 +42,6 @@ body {
   object-fit: cover;
 }
 
-#main-img-filter {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  z-index: 3;
-  /* background-color: var(--filter-color); */
-}
-
 #main-img {
   z-index: 2;
   filter: hue-rotate(var(--filter-hue)) saturate(var(--filter-saturate)) brightness(var(--filter-bright)) opacity(var(--filter-opacity));
@@ -76,10 +67,6 @@ body {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-}
-
-.thumbnail-filter {
-  background-color: var(--filter-color);
 }
 
 .thumbnail-img {

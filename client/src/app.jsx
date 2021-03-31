@@ -22,7 +22,7 @@ class App extends React.Component {
       currentFilter: ['Ice Cold', 220, 100, 90, 20]
     }
     this.addImage = this.addImage.bind(this);
-    this.selectPreset = this.selectFilter.bind(this);
+    this.selectPreset = this.selectPreset.bind(this);
     this.adjustFilter = this.adjustFilter.bind(this);
     this.removeImage = this.removeImage.bind(this);
   }
