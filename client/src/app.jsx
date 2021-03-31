@@ -1,21 +1,27 @@
 import React from 'react';
+import Filters from './Filters.jsx';
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       image: null,
-      filterH: null,
-      filterS: null,
-      filterL: null,
-      filterA: null,
+      filters: [ //array format [Filter Name, hue, saturation, lightness, opacity]
+        ['Red Hot', 0, 100, 95, 20],
+        ['Ice Cold', 220, 100, 90, 20]
+      ],
+      currentFilter: null
     }
-    this.addImage = this.addImage.bind(this)
+    this.addImage = this.addImage.bind(this);
+    this.changeFilter = this.changeFilter.bind(this);
   }
 
   addImage(event){
-    console.log('img: ', event.target.files[0]);
     this.setState({image: URL.createObjectURL(event.target.files[0])});
+  }
+
+  changeFilter(event){
+    console.log('changing filter')
   }
 
   render(){
@@ -29,6 +35,7 @@ class App extends React.Component {
         <div>
           <h1>Here</h1>
           <img src={this.state.image}/>
+          <Filters image={this.state.image} filters={this.state.filters} changeFilter={this.changeFilter}></Filters>
         </div>
       );
     }
