@@ -15,7 +15,15 @@ body {
   width: 100%;
 }
 
+#main-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
+
 #filter-list {
+  margin-top: 20px;
   width: 80vw;
   display: flex;
   flex-wrap: nowrap;
