@@ -3,10 +3,13 @@
   --filter-saturate: 100%;
   --filter-bright: 100%;
   --filter-opacity: 100%;
+  --filter-contrast: 100%;
+  --filter-blur: 0px;
 }
 
 body {
-  color: hsl(285, 66%, 75%);
+  color: hsl(0, 0%, 5%);
+  font-family: Garamond;
 }
 
 #banner {
@@ -44,7 +47,9 @@ body {
 
 #main-img {
   z-index: 2;
-  filter: hue-rotate(var(--filter-hue)) saturate(var(--filter-saturate)) brightness(var(--filter-bright)) opacity(var(--filter-opacity));
+  filter: hue-rotate(var(--filter-hue)) saturate(var(--filter-saturate)) brightness(var(--filter-bright)) opacity(var(--filter-opacity)) contrast(var(--filter-contrast)) blur(var(--filter-blur));
+  max-height: 50vh;
+  width: auto;
 }
 
 #filter-list {
@@ -73,6 +78,7 @@ body {
   height: 100%;
   width: auto;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 #filter-bars {
@@ -80,7 +86,11 @@ body {
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 30vw;
+  width: 35vw;
+}
+
+.filter-name {
+  margin-top: 3px;
 }
 
 .bar-box {
@@ -99,6 +109,8 @@ body {
 }
 
 .bar-position {
+  position: relative;
+  left: -3px;
   height: 5px;
   width: 30px;
   align-self:flex-start;
