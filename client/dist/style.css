@@ -1,8 +1,8 @@
 :root {
-  --filter-hue: 200deg;
+  --filter-hue: 0deg;
   --filter-saturate: 100%;
   --filter-bright: 100%;
-  --filter-opacity: 50%;
+  --filter-opacity: 100%;
 }
 
 body {

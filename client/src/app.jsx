@@ -15,9 +15,9 @@ class App extends React.Component {
       ['Ice Cold', 220, 100, 90, 20],
       ['Ice Cold', 220, 100, 90, 20],
       ['Ice Cold', 220, 100, 90, 20],
-      ['Ice Cold', 220, 100, 90, 20],
-      ['Plain Jane', 0, 0, 0, 0],
-      ['Red Hot', 0, 100, 95, 20]
+      ['Ice Cold', 220, 100, 90, 100],
+      ['Plain Jane', 0, 100, 100, 100],
+      ['Red Hot', 345, 100, 80, 100]
       ],
       currentFilter: ['Ice Cold', 220, 100, 90, 20]
     }
@@ -66,7 +66,7 @@ class App extends React.Component {
             <MainImage image={this.state.image} filter={this.state.currentFilter}/>
             <FilterBars filter={this.state.currentFilter} adjustFilter={this.adjustFilter}></FilterBars>
           </div>
-          <Filters image={this.state.image} filters={this.state.filters} selectPreset={this.selectPreset}></Filters>
+          <Filters image={this.state.image} filters={this.state.filters} adjustFilter={this.adjustFilter}></Filters>
         </div>
       );
     }

@@ -6,7 +6,7 @@ const Filters = (props) => {
     <div id='filter-list'>
       {props.filters.map((filter)=>{
         return(
-          <Thumbnail key={JSON.stringify(filter)}filter={filter} image={props.image} changeFilter={props.changeFilter}></Thumbnail>
+          <Thumbnail key={JSON.stringify(filter)}filter={filter} image={props.image} changeFilter={props.changeFilter} adjustFilter={props.adjustFilter}></Thumbnail>
         );
       })}
     </div>
