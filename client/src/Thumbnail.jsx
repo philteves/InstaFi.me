@@ -2,7 +2,11 @@ import React from 'react';
 
 const Thumbnail = (props) => {
   return(
-    <div>Yo</div>
+    <div className='thumbnail'>
+      <div className='thumbnail-filter'></div>
+      <img className='thumbnail-img' src={props.image}></img>
+      <span className='filter-name'>{props.filter[0]}</span>
+    </div>
   );
 }
 

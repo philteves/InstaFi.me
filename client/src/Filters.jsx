@@ -3,7 +3,7 @@ import Thumbnail from './Thumbnail.jsx';
 
 const Filters = (props) => {
   return(
-    <div>
+    <div id='filter-list'>
       {props.filters.map((filter)=>{
         return(
           <Thumbnail key={JSON.stringify(filter)}filter={filter} image={props.image} changeFilter={props.changeFilter}></Thumbnail>

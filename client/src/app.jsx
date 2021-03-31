@@ -21,19 +21,20 @@ class App extends React.Component {
   }
 
   changeFilter(event){
-    console.log('changing filter')
+    console.log('changing filter');
   }
 
   render(){
     if(this.state.image === null){
       return(
       <div>
-        <input type='file' id='user-image' accept='image/*' onChange={this.addImage}/>
+        <h1 id='banner'>InstaFi.me</h1>
+        <input type='file' id='add-image' accept='image/*' onChange={this.addImage}/>
       </div>);
     } else {
       return(
         <div>
-          <h1>Here</h1>
+          <h1 id='banner'>InstaFi.me</h1>
           <img src={this.state.image}/>
           <Filters image={this.state.image} filters={this.state.filters} changeFilter={this.changeFilter}></Filters>
         </div>
