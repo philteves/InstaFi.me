@@ -46,6 +46,7 @@ body {
   width: 25%;
   margin-left: 10vw;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   object-fit: cover;
@@ -56,6 +57,12 @@ body {
   filter: hue-rotate(var(--filter-hue)) saturate(var(--filter-saturate)) brightness(var(--filter-bright)) opacity(var(--filter-opacity)) contrast(var(--filter-contrast)) blur(var(--filter-blur));
   max-height: 50vh;
   width: auto;
+}
+
+#save-img-btn {
+  width: 80%;
+  height: 20px;
+  margin-top: 5px;
 }
 
 #filter-list {
