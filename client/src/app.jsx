@@ -9,22 +9,23 @@ class App extends React.Component {
     this.state = {
       image: null,
       filters: [ //array format [Filter Name, hue, saturation, lightness, opacity, contrast, blur]
-        ['B&W Haze', 260, 5, 140, 100, 40, 0],
-        ['B&W Sharp', 10, 5, 110, 100, 310, 0],
+        ['B&W Haze', 260, 1, 140, 100, 40, 0],
+        ['B&W Sharp', 10, 1, 110, 100, 310, 0],
         ['B&W Cool', 260, 5, 140, 100, 80, 0],
         ['B&W Hot', 20, 5, 110, 100, 120, 0],
         ['Ice Cold', 220, 20, 90, 100, 130, 0],
         ['Sin City', 20, 13, 110, 100, 160, 0],
         ['Plain Jane', 0, 100, 100, 100, 100, 0],
         ['Pastel', 0, 250, 100, 100, 90, 0],
-        ['Stark Contrast', 0, 110, 100, 100, 310, 0],
+        ['Stark Contrast', 0, 90, 100, 100, 310, 0],
         ['Dark Soul', 0, 50, 70, 100, 270, 0],
         ['Seen The Light', 0, 90, 180, 100, 90, 0],
         ['So Hot', 0, 180, 100, 100, 320, 0],
         ['The Blues', 180, 30, 110, 90, 120, 1],
-        ['Nostalgia', 340, 80, 90, 90, 400, 1],
+        ['Nostalgia', 350, 50, 90, 90, 400, 1],
         ['Sepia', 45, 50, 90, 90, 410, 1],
         ['Ultraviolet', 280, 80, 180, 100, 300, 1],
+        ['Glow In The Dark', 360, 320, 50, 100, 320, 0],
         ['Blurred Vision', 0, 180, 100, 100, 320, 3],
         ['Expressionist', 355, 250, 170, 100, 440, 5],
         ['Sunburned', 5, 350, 150, 90, 100, 0],
@@ -62,7 +63,6 @@ class App extends React.Component {
   }
 
   newFilter(filter){
-    console.log('here');
     let filterList = this.state.filters;
     filterList.push(filter);
     this.setState({filters: filterList});
