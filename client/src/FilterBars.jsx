@@ -17,11 +17,7 @@ class FilterBars extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('did update');
-    console.log('prevProps: ', prevProps, ' prevState: ', prevState);
-    console.log('props equal', prevProps === this.props, ', state equal: ', prevState === this.state);
     if(prevProps !== this.props){
-      console.log('prev: ', prevState, 'props: ', this.state);
       this.setState({
         h: this.props.filter[1],
         s: this.props.filter[2],
@@ -45,7 +41,6 @@ class FilterBars extends React.Component {
     let property = e.target.name;
     let value = e.target.value;
     this.setState({altered: true, [property]: parseInt(value)}, () => {
-      console.log('there: ', JSON.stringify(this.props.adjustFilter));
       this.props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a, this.state.contrast, this.state.blur);
     });
   }
