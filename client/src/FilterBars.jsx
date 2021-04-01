@@ -16,6 +16,23 @@ class FilterBars extends React.Component {
     this.updateInput = this.updateInput.bind(this);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log('did update');
+    console.log('prevProps: ', prevProps, ' prevState: ', prevState);
+    console.log('props equal', prevProps === this.props, ', state equal: ', prevState === this.state);
+    if(prevProps !== this.props){
+      console.log('prev: ', prevState, 'props: ', this.state);
+      this.setState({
+        h: this.props.filter[1],
+        s: this.props.filter[2],
+        l: this.props.filter[3],
+        a: this.props.filter[4],
+        contrast: this.props.filter[5],
+        blur: this.props.filter[6]
+      }, ()=>{prevProps = this.props;});
+    }
+  }
+
   update(e, bar, value){
     console.log('event: ', e);
     console.log('Implement me!!');
@@ -23,6 +40,7 @@ class FilterBars extends React.Component {
     //setState w/ new hsla, then
     //this.props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a, this.state.contrast, this.state.blur);
   }
+
   updateInput(e){
     let property = e.target.name;
     let value = e.target.value;
