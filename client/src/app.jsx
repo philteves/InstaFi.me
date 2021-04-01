@@ -22,7 +22,6 @@ class App extends React.Component {
       currentFilter: ['Plain Jane', 0, 100, 100, 100, 100, 0]
     }
     this.addImage = this.addImage.bind(this);
-    this.selectPreset = this.selectPreset.bind(this);
     this.adjustFilter = this.adjustFilter.bind(this);
     this.removeImage = this.removeImage.bind(this);
   }
@@ -35,18 +34,15 @@ class App extends React.Component {
     this.setState({image: null});
   }
 
-  selectPreset(event){ //swaps active filter with a dif preset from state.filters
-    console.log('changing filter');
-  }
-
-  adjustFilter(h,s,l,a){ //sets active filter to custom settings designated in FilterBars
-    console.log('adjusting filter');
-    let custom = ['Custom', h, s, l, a];
+  adjustFilter(h,s,l,a,c,b){ //sets active filter to custom settings designated in FilterBars
+    let custom = ['Custom', h, s, l, a, c, b];
     let root = document.documentElement;
     root.style.setProperty('--filter-hue', h + 'deg');
     root.style.setProperty('--filter-saturate', s + '%');
     root.style.setProperty('--filter-bright', l + '%');
     root.style.setProperty('--filter-opacity', a + '%');
+    root.style.setProperty('--filter-contrast', c + '%');
+    root.style.setProperty('--filter-blur', b + 'px');
     this.setState({currentFilter: custom});
   }
 

@@ -31,6 +31,11 @@ body {
   left: 20px;
 }
 
+#save-filter-btn {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+}
 #main-content {
   display: flex;
   justify-content: space-around;
@@ -118,4 +123,19 @@ body {
   background-color: hsla(0, 0%, 90%, 100%);
   border: 1px solid hsla(0, 0%, 50%, 100%);
   border-radius: 5px;
+}
+
+#hue-bar {
+  background-image: url('./images/hue.jpg');
+  background-size: 100% 100%;
+}
+
+#blur-bar {
+  background-image: url('./images/blur.jpg');
+  background-size: 100% 100%;
+}
+
+#contrast-bar {
+  background-image: url('./images/contrast.jpg');
+  background-size: 100% 100%;
 }
