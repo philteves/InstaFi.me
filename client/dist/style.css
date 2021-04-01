@@ -98,7 +98,7 @@ body {
 
 #filter-bars {
   margin-top: -5px;
-  margin-left: 10vh;
+  margin-left: 5vw;
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;

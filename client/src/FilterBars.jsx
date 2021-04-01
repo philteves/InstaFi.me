@@ -27,6 +27,7 @@ class FilterBars extends React.Component {
         blur: this.props.filter[6]
       }, ()=>{prevProps = this.props;});
     }
+    this.addFilter = this.addFilter.bind(this);
   }
 
   update(e, bar, value){
@@ -45,10 +46,16 @@ class FilterBars extends React.Component {
     });
   }
 
+  addFilter(){
+    const name = prompt('Name your filter!');
+    let filter = [name, this.state.h, this.state.s, this.state.l, this.state.a, this.state.constrast, this.state.blur];
+    this.props.newFilter(filter);
+  }
+
   render(){
     let save = <div></div>
     if(this.state.altered){
-      save = <button id='save-filter-btn'>Save Filter</button>;
+      save = <button id='save-filter-btn' onClick={()=>{this.addFilter()}}>Save Filter</button>;
     }
     return(
     <div>
