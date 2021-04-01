@@ -21,13 +21,14 @@ class FilterBars extends React.Component {
     console.log('Implement me!!');
     this.setState({altered: true});
     //setState w/ new hsla, then
-    //this.props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a);
+    //this.props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a, this.state.contrast, this.state.blur);
   }
   updateInput(e){
     let property = e.target.name;
     let value = e.target.value;
     this.setState({altered: true, [property]: parseInt(value)}, () => {
-      this.props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a);
+      console.log('there: ', JSON.stringify(this.props.adjustFilter));
+      this.props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a, this.state.contrast, this.state.blur);
     });
   }
 
@@ -46,7 +47,7 @@ class FilterBars extends React.Component {
           </div>
           <span className='bar-desc'>Contrast</span>
           <span>{this.state.contrast}%</span>
-          <input type='number' name="contrast" min='0' step='10' max='500' value={this.state.contrast} onChange={(e)=>{this.updateInput(e)}}></input>
+          <input type='number' className='bar-input' name="contrast" min='0' step='10' max='500' value={this.state.contrast} onChange={(e)=>{this.updateInput(e)}}></input>
 
         </div>
         <div className='bar-box'>

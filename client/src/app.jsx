@@ -36,6 +36,7 @@ class App extends React.Component {
 
   adjustFilter(h,s,l,a,c,b){ //sets active filter to custom settings designated in FilterBars
     let custom = ['Custom', h, s, l, a, c, b];
+    console.log('custom: ', custom);
     let root = document.documentElement;
     root.style.setProperty('--filter-hue', h + 'deg');
     root.style.setProperty('--filter-saturate', s + '%');

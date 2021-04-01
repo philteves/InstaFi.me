@@ -44,6 +44,7 @@ body {
 #main-img-container {
   height: 25%;
   width: 25%;
+  margin-top: -10px;
   margin-left: 10vw;
   display: inline-flex;
   flex-direction: column;
@@ -66,7 +67,7 @@ body {
 }
 
 #filter-list {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 20px;
   width: 90vw;
   height: 30vh;
@@ -96,6 +97,7 @@ body {
 }
 
 #filter-bars {
+  margin-top: -5px;
   margin-left: 10vh;
   display: inline-flex;
   flex-direction: row;
@@ -132,6 +134,10 @@ body {
   background-color: hsla(0, 0%, 90%, 100%);
   border: 1px solid hsla(0, 0%, 50%, 100%);
   border-radius: 5px;
+}
+
+.bar-desc {
+  margin-top: 5px;
 }
 
 #hue-bar {
