@@ -69,6 +69,7 @@ body {
   margin-top: 20px;
   margin-left: 20px;
   width: 90vw;
+  height: 30vh;
   overflow-x: scroll;
   overflow-y: visible;
   display: flex;
@@ -104,6 +105,7 @@ body {
 
 .filter-name {
   margin-top: 3px;
+  text-decoration: underline;
 }
 
 .bar-box {

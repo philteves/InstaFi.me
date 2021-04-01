@@ -21,12 +21,14 @@ class FilterBars extends React.Component {
     console.log('Implement me!!');
     this.setState({altered: true});
     //setState w/ new hsla, then
-    //props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a);
+    //this.props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a);
   }
   updateInput(e){
     let property = e.target.name;
     let value = e.target.value;
-    this.setState({altered: true, property: value});
+    this.setState({altered: true, [property]: parseInt(value)}, () => {
+      this.props.adjustFilter(this.state.h, this.state.s, this.state.l, this.state.a);
+    });
   }
 
   render(){
@@ -53,6 +55,7 @@ class FilterBars extends React.Component {
           </div>
           <span className='bar-desc'>Hue</span>
           <span>{this.state.h}</span>
+          <input type='number' name="h" min='0' step='10' max='360' value={this.state.h} onChange={(e)=>{this.updateInput(e)}}></input>
         </div>
         <div className='bar-box'>
           <div className='bar' style={{background: `linear-gradient(to bottom, hsl(${this.state.h},400%, 50%), hsl(${this.state.h}, 0%, 50%))`}} onClick={()=>{this.update('s', 'insert value')}}>
@@ -60,6 +63,7 @@ class FilterBars extends React.Component {
           </div>
           <span className='bar-desc'>Saturation</span>
           <span>{this.state.s}%</span>
+          <input type='number' name="s" min='0' step='10' max='400' value={this.state.s} onChange={(e)=>{this.updateInput(e)}}></input>
         </div>
         <div className='bar-box'>
           <div className='bar' style={{background: `linear-gradient(to bottom, hsl(${this.state.h},100%, 200%), hsl(${this.state.h}, 100%, 0%))`}} onClick={()=>{this.update('l', 'insert value')}}>
@@ -67,6 +71,7 @@ class FilterBars extends React.Component {
           </div>
           <span className='bar-desc'>Lightness</span>
           <span>{this.state.l}%</span>
+          <input type='number' name="l" min='0' step='10' max='200' value={this.state.l} onChange={(e)=>{this.updateInput(e)}}></input>
 
         </div>
         <div className='bar-box'>
@@ -75,6 +80,7 @@ class FilterBars extends React.Component {
           </div>
           <span className='bar-desc'>Opacity</span>
           <span>{this.state.a}%</span>
+          <input type='number' name="a" min='0' step='10' max='100' value={this.state.a} onChange={(e)=>{this.updateInput(e)}}></input>
         </div>
         <div className='bar-box'>
           <div className='bar' id='blur-bar' onClick={()=>{this.update('blur', 'insert value')}}>
@@ -82,6 +88,7 @@ class FilterBars extends React.Component {
           </div>
           <span className='bar-desc'>Blur</span>
           <span>{this.state.blur}px</span>
+          <input type='number' name="blur" min='0' step='1' max='5' value={this.state.blur} onChange={(e)=>{this.updateInput(e)}}></input>
         </div>
       </div>
     </div>);
